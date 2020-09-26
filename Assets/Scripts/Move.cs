@@ -8,12 +8,15 @@ public class Move : MonoBehaviour
     public float backwardsSpeed;
     private Camera cam;
 
+
     void Start()
     {
         cam = FindObjectOfType<Camera>();
 
-        float scale = Mathf.Round(Random.Range(1.0f, 2.0f)); 
-        transform.localScale = new Vector2(scale, 1);        
+        if (this.tag == "Box") {
+            float scale = Mathf.Round(Random.Range(1.0f, 2.3f));
+            transform.localScale = new Vector2(scale, 1);
+        }
     }
 
     // Update is called once per frame
@@ -29,4 +32,6 @@ public class Move : MonoBehaviour
         }
         
     }
+
+    
 }
